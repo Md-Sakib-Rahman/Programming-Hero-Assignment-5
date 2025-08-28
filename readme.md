@@ -1,165 +1,64 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
+### What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
+1) getElementById finds one element by its id (provided inside it as parmeter) and returs single element or null if not found. 
 
-### 📅 No Deadline For 50 marks
+Code : document.getElementById("subscribeButton")
 
-### 📅 Deadline For 30 marks: Any time after 29th August.
+this will return a single element which has the following id named "subscribeButton" or null if not found.
 
----
+2) getElementsByClassName finds all element by its class name (provided inside it as parmeter) return HTMLCollection. 
 
-## ✅ Main Requirements (50 Marks)
+Code: document.getElementsByClassName("item");
 
-### 1. Navbar
+this will return a HTML collection which has the following class named "item" .
 
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
+3) querySelector finds first element which matches the css selector (provided inside it as parmeter - (#id, .class, div > p, etc )) and returs single element (Node) . 
 
----
+code : document.querySelector(".item");
 
-### 2. Hero Section
+this will return a single element (as Node) which has the following class named "item" .
 
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
+4) querySelectorALL finds all element which matches the css selector (provided inside it as parmeter - (#id, .class, div > p, etc )) and returs a list of elements (NodeList) .
 
----
+code : document.querySelectorAll(".item");
 
-### 2. Main Section
+this will return a all element (as Nodelist) which has the following class named "item" .
 
-This Section will have layout as figma
 
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
+### How do you create and insert a new element into the DOM?
 
-### Emergency Hotline Section
+step 1: take the div where new elements will be inserted Code: const element = document.getElementById("itemDiv")
+step 2: create a new div using javascript, Code: const newDiv = document.createElement("div");
+step 3: fill the div, Code: newDiv= &lt;p&gt; im the new element &lt;/p&gt;
+step 4: append the div inside the main div (element) Code: element.appendChild(newdiv)
 
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
+### What is Event Bubbling and how does it work?
 
-### History Section
+Html :<pre> ```html <div id="parent"> <button id="child">Click Me</button> </div> ``` </pre>
 
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
+jsCode: 
+document.getElementById("parent").addEventListener("click", () => {
+  alert("Parent clicked");
+});
+document.getElementById("child").addEventListener("click", () => {
+  alert("Child clicked");
+});
 
----
+here when we click the child element the dom api will move up (bubble up) and also triger the event on parent even though we didnt clicked the parent div we click on child button. 
+as a result it will show this alert first "Child clicked" and then this "Parent clicked"
 
-### 3. Responsiveness (5 Marks)
+this is called Event Bubbling.
 
-- Website should be fully **responsive for mobile devices** (implementation up to you)
+### What is Event Delegation in JavaScript? Why is it useful?
 
----
+Event deligation means using one event listener on parent to catch the event from its child. 
 
-## Functionalities
+if a parent element has 100 buttons we dont need 100 event listener what we can do is give a single event listener on the parent and catch the from its child using event bubbling to our advantage.
 
-### 4. Heart Icons
+### What is the difference between preventDefault() and stopPropagation() methods?
 
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
+event.preventDefault() this prevent the browser default behaviour for an event. For example in a form there is a submit button which has a default behaviour of submitting we can prevent it by using event.preventDefault()
 
----
+stopPropagation() this is a solution to event bubbling problem where it prevents events from bubbling up.
 
-### 5. Call Buttons
 
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
-## Create Readme
-
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
-
-### 6. Answer the following questions clearly:
-
-1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
-2. How do you **create and insert a new element into the DOM**?
-3. What is **Event Bubbling** and how does it work?
-4. What is **Event Delegation** in JavaScript? Why is it useful?
-5. What is the difference between **preventDefault() and stopPropagation()** methods?
-
----
-
-## 🧪 Challenges Part (10 Marks)
-
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
-
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
-
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
-
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
-
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
-
-💡Hint: Search Google with that below question
-
-```bash
-How to get current local time in js
-```
-
----
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
