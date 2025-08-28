@@ -1,4 +1,5 @@
-### What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+### <span style="color:red">What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?</span>
+
 
 1) getElementById finds one element by its id (provided inside it as parmeter) and returs single element or null if not found. 
 
@@ -25,16 +26,16 @@ code : document.querySelectorAll(".item");
 this will return a all element (as Nodelist) which has the following class named "item" .
 
 
-### How do you create and insert a new element into the DOM?
+### <span style="color:red">How do you create and insert a new element into the DOM?</span>
 
 step 1: take the div where new elements will be inserted Code: const element = document.getElementById("itemDiv")
 step 2: create a new div using javascript, Code: const newDiv = document.createElement("div");
 step 3: fill the div, Code: newDiv= &lt;p&gt; im the new element &lt;/p&gt;
 step 4: append the div inside the main div (element) Code: element.appendChild(newdiv)
 
-### What is Event Bubbling and how does it work?
+### <span style="color:red">What is Event Bubbling and how does it work?</span>
 
-Html :<pre> ```html <div id="parent"> <button id="child">Click Me</button> </div> ``` </pre>
+Html :<pre> ``` <div id="parent"> <button id="child">Click Me</button> </div> ``` </pre>
 
 jsCode: 
 document.getElementById("parent").addEventListener("click", () => {
@@ -49,13 +50,15 @@ as a result it will show this alert first "Child clicked" and then this "Parent 
 
 this is called Event Bubbling.
 
-### What is Event Delegation in JavaScript? Why is it useful?
+
+### <span style="color:red">What is Event Delegation in JavaScript? Why is it useful?</span>
 
 Event deligation means using one event listener on parent to catch the event from its child. 
 
 if a parent element has 100 buttons we dont need 100 event listener what we can do is give a single event listener on the parent and catch the from its child using event bubbling to our advantage.
 
-### What is the difference between preventDefault() and stopPropagation() methods?
+
+### <span style="color:red">What is the difference between preventDefault() and stopPropagation() methods?</span>
 
 event.preventDefault() this prevent the browser default behaviour for an event. For example in a form there is a submit button which has a default behaviour of submitting we can prevent it by using event.preventDefault()
 
