@@ -1,25 +1,26 @@
 ### <span style="color:red">What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?</span>
+<hr>
+<hr>
 
-
-1) getElementById finds one element by its id (provided inside it as parmeter) and returs single element or null if not found. 
+1. getElementById finds one element by its id (provided inside it as parmeter) and returs single element or null if not found. 
 
 Code : document.getElementById("subscribeButton")
 
 this will return a single element which has the following id named "subscribeButton" or null if not found.
 
-2) getElementsByClassName finds all element by its class name (provided inside it as parmeter) return HTMLCollection. 
+2. getElementsByClassName finds all element by its class name (provided inside it as parmeter) return HTMLCollection. 
 
 Code: document.getElementsByClassName("item");
 
 this will return a HTML collection which has the following class named "item" .
 
-3) querySelector finds first element which matches the css selector (provided inside it as parmeter - (#id, .class, div > p, etc )) and returs single element (Node) . 
+3. querySelector finds first element which matches the css selector (provided inside it as parmeter - (#id, .class, div > p, etc )) and returs single element (Node) . 
 
 code : document.querySelector(".item");
 
 this will return a single element (as Node) which has the following class named "item" .
 
-4) querySelectorALL finds all element which matches the css selector (provided inside it as parmeter - (#id, .class, div > p, etc )) and returs a list of elements (NodeList) .
+4. querySelectorALL finds all element which matches the css selector (provided inside it as parmeter - (#id, .class, div > p, etc )) and returs a list of elements (NodeList) .
 
 code : document.querySelectorAll(".item");
 
@@ -27,7 +28,8 @@ this will return a all element (as Nodelist) which has the following class named
 
 
 ### <span style="color:red">How do you create and insert a new element into the DOM?</span>
-
+<hr>
+<hr>
 step 1: take the div where new elements will be inserted Code: const element = document.getElementById("itemDiv")
 
 step 2: create a new div using javascript, Code: const newDiv = document.createElement("div");
@@ -38,7 +40,8 @@ step 4: append the div inside the main div (element) Code: element.appendChild(n
 
 
 ### <span style="color:red">What is Event Bubbling and how does it work?</span>
-
+<hr>
+<hr>
 Html :<pre> ``` <div id="parent"> <button id="child">Click Me</button> </div> ``` </pre>
 
 jsCode: 
@@ -56,14 +59,16 @@ this is called Event Bubbling.
 
 
 ### <span style="color:red">What is Event Delegation in JavaScript? Why is it useful?</span>
-
+<hr>
+<hr>
 Event deligation means using one event listener on parent to catch the event from its child. 
 
 if a parent element has 100 buttons we dont need 100 event listener what we can do is give a single event listener on the parent and catch the from its child using event bubbling to our advantage.
 
 
 ### <span style="color:red">What is the difference between preventDefault() and stopPropagation() methods?</span>
-
+<hr>
+<hr>
 event.preventDefault() this prevent the browser default behaviour for an event. For example in a form there is a submit button which has a default behaviour of submitting we can prevent it by using event.preventDefault()
 
 stopPropagation() this is a solution to event bubbling problem where it prevents events from bubbling up.
