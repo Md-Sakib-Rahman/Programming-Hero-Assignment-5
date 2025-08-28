@@ -29,9 +29,13 @@ this will return a all element (as Nodelist) which has the following class named
 ### <span style="color:red">How do you create and insert a new element into the DOM?</span>
 
 step 1: take the div where new elements will be inserted Code: const element = document.getElementById("itemDiv")
+
 step 2: create a new div using javascript, Code: const newDiv = document.createElement("div");
+
 step 3: fill the div, Code: newDiv= &lt;p&gt; im the new element &lt;/p&gt;
+
 step 4: append the div inside the main div (element) Code: element.appendChild(newdiv)
+
 
 ### <span style="color:red">What is Event Bubbling and how does it work?</span>
 
